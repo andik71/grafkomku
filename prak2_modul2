@@ -1,0 +1,19 @@
+void setup() {
+  size(300, 300, P3D);
+}
+
+void draw() {
+  background(200);
+  lights();
+  stroke(50);
+
+  // Posisikan objek di tengah form
+  translate(width / 2, height / 2, 0);
+
+  // Rotasi objek berdasarkan input mouse
+  rotateX(mouseY * 0.05);
+  rotateY(mouseX * 0.05);
+
+  // Objek tetap pada koordinat (0, 0, 0) setelah translasi dan rotasi
+  box(100);
+}
