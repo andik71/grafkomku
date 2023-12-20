@@ -1,0 +1,2 @@
+# grafkomku
+tugas/praktikum grafkom
