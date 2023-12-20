@@ -1,0 +1,34 @@
+float angleX = 0.0;
+float angleY = 0.0;
+
+void setup() {
+  size(400, 400, P3D);
+}
+
+void draw() {
+  background(255);
+  translate(width / 2, height / 2, 0);
+
+  // Animasi rotasi ketika tombol mouse diklik
+  if (mousePressed) {
+    float deltaX = (mouseX - pmouseX) * 0.01;
+    float deltaY = (mouseY - pmouseY) * 0.01;
+    angleX += deltaY;
+    angleY += deltaX;
+  }
+
+  // Menggambar kubus dengan rotasi
+  stroke(0);
+  noFill();
+  rotateX(angleX);
+  rotateY(angleY);
+  box(200);
+
+  // Menggambar bola di tengah kubus dengan animasi rotasi
+  pushMatrix();
+  fill(255, 0, 0); // Warna merah
+  rotateX(angleX);
+  rotateY(angleY);
+  sphere(100);
+  popMatrix();
+}
