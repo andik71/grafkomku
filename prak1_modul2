@@ -1,0 +1,15 @@
+void setup() {
+  size(300, 300, P3D);
+}
+
+void draw() {
+  background(200);
+  lights();
+  stroke(50);
+
+  // Posisikan objek di tengah form
+  translate(width / 2, height / 2, 0);
+
+  // Objek tetap pada koordinat (0, 0, 0) setelah translasi
+  box(50);
+}
